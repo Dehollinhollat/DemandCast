@@ -147,18 +147,17 @@ Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artifici
 
 ## 8. Limites et perspectives
 
-### Limites actuelles
+Limites identifiées :
 
-- L'API ne gère pour l'instant que **GROCERY I** — à étendre aux 5 familles
-- Les données s'arrêtent en **2017** — réentraînement nécessaire sur données récentes
-- Le LSTM sous-performe sur cette granularité — à explorer avec des données par magasin
+Modèle entraîné sur une seule famille (GROCERY I) pour l'API — à étendre aux 5
+Données historiques jusqu'en 2017 — modèle à réentraîner sur données récentes
+LSTM sous-performant sur cette granularité — à explorer avec données par magasin
+Perspectives d'amélioration :
 
-### Améliorations prévues
-
-- [ ] Intégrer les 5 familles dans l'API avec endpoint par famille
-- [ ] Ajouter un dashboard **Power BI** connecté à l'API
-- [ ] Explorer **XGBoost** comme alternative intermédiaire
-- [ ] Mettre en place un réentraînement automatique mensuel
+Intégrer les 5 familles dans l'API avec endpoint par famille
+Ajouter un dashboard Power BI connecté à l'API pour visualisation temps réel
+Explorer XGBoost comme alternative intermédiaire entre Prophet et LSTM
+Mettre en place un réentraînement automatique mensuel du modèle
 
 ---
 
