@@ -137,7 +137,7 @@ Le LSTM serait à revisiter avec des données agrégées par magasin.
 ## 6. Pipeline d'alertes automatiques
 
 ### 6.1 Architecture
-'''
+```
 Schedule Trigger (lundi 7h30)
 ↓
 HTTP Request → FastAPI /forecast
@@ -145,7 +145,7 @@ HTTP Request → FastAPI /forecast
 Code Node (détection rupture)
 ↓
 Gmail (email HTML hebdomadaire)
-'''
+```
 
 ### 6.2 Logique d'alerte
 
