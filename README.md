@@ -1,4 +1,4 @@
-# 🛒 DemandCast — Moteur de prévision de la demande retail
+# DemandCast — Moteur de prévision de la demande retail
 
 > Prévoir les ventes à 30 jours par famille de produits et déclencher automatiquement des alertes email en cas de risque de rupture de stock.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Objectif
+## Objectif
 
 En grande distribution, anticiper les ruptures de stock permet d'éviter des pertes
 de chiffre d'affaires et des pénalités fournisseurs.
@@ -20,7 +20,7 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 
 ---
 
-## 🏗️ Architecture du projet
+## Architecture du projet
 ```demandcast/
 │
 ├── data/
@@ -47,7 +47,7 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Source :** [Store Sales — Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting) (Kaggle / Favorita)
 
@@ -60,7 +60,7 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 
 ---
 
-## 🤖 Modèles
+## Modèles
 
 ### Prophet (Meta) — Modèle retenu ✅
 
@@ -87,7 +87,7 @@ Trois variantes testées sur GROCERY I :
 
 ---
 
-## 🔔 Pipeline d'alertes automatiques
+## Pipeline d'alertes automatiques
 ```
 ⏰ Chaque lundi à 7h30 (n8n Schedule)
 ↓
@@ -103,7 +103,7 @@ des 30 derniers jours → alerte déclenchée avec liste des jours à risque.
 
 ---
 
-## 🚀 Installation et lancement
+## Installation et lancement
 
 ### Prérequis
 - Python 3.11
@@ -163,7 +163,7 @@ GET /forecast?jours=30
 
 ---
 
-## 📁 Exports disponibles
+## Exports disponibles
 
 | Fichier | Contenu |
 |---|---|
@@ -177,7 +177,7 @@ GET /forecast?jours=30
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 Pour une explication complète des choix méthodologiques, des résultats
 et des perspectives d'amélioration :
@@ -186,7 +186,7 @@ et des perspectives d'amélioration :
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **Déhollin HOLLAT** — Chef de Projet Data IA  
 MBA Big Data & IA  
