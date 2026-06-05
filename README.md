@@ -1,4 +1,4 @@
-# DemandCast — Moteur de prévision de la demande retail
+# DemandCast - Moteur de prévision de la demande retail
 
 > Prévoir les ventes à 30 jours par famille de produits et déclencher automatiquement des alertes email en cas de risque de rupture de stock.
 
@@ -31,11 +31,11 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 │   ├── 01_exploration.ipynb  # Analyse exploratoire
 │   ├── 02_cleaning.ipynb     # Nettoyage et préparation
 │   ├── 03_prophet.ipynb      # Modélisation Prophet × 5 familles
-│   ├── 04_lstm.ipynb         # LSTM — 3 variantes comparées
+│   ├── 04_lstm.ipynb         # LSTM - 3 variantes comparées
 │   └── 05_comparison.ipynb   # Comparaison et conclusion
 │
 ├── api/
-│   └── main.py               # API FastAPI — endpoint /forecast
+│   └── main.py               # API FastAPI - endpoint /forecast
 │
 ├── models/
 │   └── prophet_grocery.pkl   # Modèle Prophet sérialisé
@@ -49,12 +49,12 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 
 ## Dataset
 
-**Source :** [Store Sales — Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting) (Kaggle / Favorita)
+**Source :** [Store Sales - Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting) (Kaggle / Favorita)
 
 | Paramètre | Valeur |
 |---|---|
 | Volume | ~3 millions de lignes |
-| Période | Janvier 2013 — Août 2017 |
+| Période | Janvier 2013 - Août 2017 |
 | Granularité | Journalière par magasin et famille de produits |
 | Familles analysées | GROCERY I · BEVERAGES · PRODUCE · CLEANING · DAIRY |
 
@@ -62,7 +62,7 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 
 ## Modèles
 
-### Prophet (Meta) — Modèle retenu ✅
+### Prophet (Meta) - Modèle retenu ✅
 
 | Famille | MAPE | Évaluation |
 |---|---|---|
@@ -72,15 +72,15 @@ pour permettre aux équipes supply chain d'agir avant que le problème ne survie
 | CLEANING | 10.98% | ✅ Bon |
 | PRODUCE | 14.08% | ⚠️ Correct |
 
-### LSTM (TensorFlow) — Comparaison ❌
+### LSTM (TensorFlow) - Comparaison ❌
 
 Trois variantes testées sur GROCERY I :
 
 | Variante | Features | MAPE |
 |---|---|---|
-| v1 — Baseline | Fenêtre glissante 30j | 62.37% |
-| v2 — N-1 | v1 + ventes même période N-1 | 62.61% |
-| v3 — Hybride | v2 + mois + jour semaine | 59.16% |
+| v1 - Baseline | Fenêtre glissante 30j | 62.37% |
+| v2 - N-1 | v1 + ventes même période N-1 | 62.61% |
+| v3 - Hybride | v2 + mois + jour semaine | 59.16% |
 
 > **Conclusion :** Prophet surpasse le LSTM sur ce dataset (~1 700 points/famille).
 > Le LSTM nécessite davantage de volume et une granularité plus fine pour exprimer sa puissance.
@@ -93,7 +93,7 @@ Trois variantes testées sur GROCERY I :
 ↓
 🌐 HTTP Request → FastAPI /forecast?jours=30
 ↓
-🔍 Code Node — détection rupture (seuil : 75% de la référence)
+🔍 Code Node - détection rupture (seuil : 75% de la référence)
 ↓
 📧 Email HTML automatique → équipe supply chain
 ```
@@ -188,9 +188,9 @@ et des perspectives d'amélioration :
 
 ## Auteur
 
-**Déhollin HOLLAT** — Chef de Projet Data IA  
+**Déhollin HOLLAT** - Chef de Projet Data IA  
 MBA Big Data & IA  
 
 ---
 
-*Projet réalisé dans le cadre d'un portfolio Data/AI — Avril 2025*
+*Projet réalisé dans le cadre d'un portfolio Data/AI - Avril 2025*
