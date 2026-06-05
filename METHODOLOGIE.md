@@ -1,7 +1,7 @@
 # DemandCast - Méthodologie
 
 > **Auteur :** Déhollin HOLLAT, Chef de Projet Data IA  
-> **Date :** Avril 2025  
+> **Date :** Avril 2026  
 > **En une phrase :** Un système qui prédit les ventes à 30 jours et envoie automatiquement une alerte par email quand un risque de rupture de stock est détecté.
 
 ---
