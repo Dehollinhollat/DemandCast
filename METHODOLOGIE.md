@@ -160,4 +160,4 @@ Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artifici
 
 ---
 
-*DemandCast · Déhollin HOLLAT, Chef de Projet Data IA · Avril 2025*
+*DemandCast · Déhollin HOLLAT, Chef de Projet Data IA · Avril 2026*
