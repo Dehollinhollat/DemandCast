@@ -1,4 +1,4 @@
-# 📊 DemandCast — Méthodologie
+# DemandCast - Méthodologie
 
 > **Auteur :** Déhollin HOLLAT, Chef de Projet Data IA  
 > **Date :** Avril 2025  
@@ -29,7 +29,7 @@ En grande distribution, manquer de stock coûte cher : ventes perdues, clients m
 
 ## 2. Les données utilisées
 
-Source : **Kaggle — Store Sales Time Series Forecasting (Favorita)**
+Source : **Kaggle - Store Sales Time Series Forecasting (Favorita)**
 
 | Paramètre | Valeur |
 |---|---|
@@ -46,7 +46,7 @@ Sur 33 familles disponibles, 5 ont été sélectionnées pour leur diversité de
 
 | Famille | Pourquoi ce choix |
 |---|---|
-| **GROCERY I** (Épicerie) | La plus vendue — référence du projet |
+| **GROCERY I** (Épicerie) | La plus vendue - référence du projet |
 | **BEVERAGES** (Boissons) | Forte variation selon les saisons |
 | **PRODUCE** (Fruits & Légumes) | Ventes très irrégulières |
 | **CLEANING** (Entretien) | Comportement stable et régulier |
@@ -58,7 +58,7 @@ Sur 33 familles disponibles, 5 ont été sélectionnées pour leur diversité de
 
 Deux approches ont été testées et comparées.
 
-### ✅ Approche 1 — Prophet (retenue)
+### ✅ Approche 1 - Prophet (retenue)
 
 Prophet est un outil open-source créé par **Meta (Facebook)**, conçu pour prévoir des séries temporelles business. Il détecte automatiquement :
 
@@ -67,27 +67,27 @@ Prophet est un outil open-source créé par **Meta (Facebook)**, conçu pour pr�
 - La **saisonnalité annuelle** (décembre est-il un mois fort ?)
 - L'**impact des jours fériés** (les ventes chutent-elles le 1er janvier ?)
 
-### ❌ Approche 2 — LSTM (testée, non retenue)
+### ❌ Approche 2 - LSTM (testée, non retenue)
 
-Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artificiels qui apprend des séquences dans le temps — un peu comme un humain qui mémoriserait les ventes des 30 derniers jours pour prédire demain.
+Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artificiels qui apprend des séquences dans le temps - un peu comme un humain qui mémoriserait les ventes des 30 derniers jours pour prédire demain.
 
 > ⚠️ Il nécessite idéalement **5 000+ points** par série pour converger. Avec seulement ~1 700 points disponibles par famille, les résultats sont insuffisants.
 
 ---
 
-## 5. Résultats — Qui gagne ?
+## 5. Résultats - Qui gagne ?
 
 ### 📖 Lexique des indicateurs
 
 | Sigle | Nom complet | Ce que ça mesure |
 |---|---|---|
-| **MAE** | Mean Absolute Error — Erreur Absolue Moyenne | En moyenne, de combien d'unités le système se trompe-t-il par jour ? |
-| **RMSE** | Root Mean Square Error — Racine de l'Erreur Quadratique Moyenne | Comme le MAE, mais pénalise davantage les grosses erreurs |
-| **MAPE** | Mean Absolute Percentage Error — Erreur Moyenne en Pourcentage | À quel pourcentage près le système prédit-il ? **Plus c'est bas, mieux c'est.** |
+| **MAE** | Mean Absolute Error - Erreur Absolue Moyenne | En moyenne, de combien d'unités le système se trompe-t-il par jour ? |
+| **RMSE** | Root Mean Square Error - Racine de l'Erreur Quadratique Moyenne | Comme le MAE, mais pénalise davantage les grosses erreurs |
+| **MAPE** | Mean Absolute Percentage Error - Erreur Moyenne en Pourcentage | À quel pourcentage près le système prédit-il ? **Plus c'est bas, mieux c'est.** |
 
 > 💡 **Exemple :** Un MAPE de 8% sur des ventes de 100 000 unités = prévision entre 92 000 et 108 000 unités.
 
-### Prophet — Résultats sur les 5 familles (test : 90 jours)
+### Prophet - Résultats sur les 5 familles (test : 90 jours)
 
 | Famille | MAE | MAPE | Évaluation |
 |---|---|---|---|
@@ -97,13 +97,13 @@ Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artifici
 | CLEANING | 8 409 unités | 11,0% | ✅ Bon |
 | PRODUCE | 17 405 unités | 14,1% | ⚠️ Correct |
 
-### LSTM — Résultats sur GROCERY I (test : 20%)
+### LSTM - Résultats sur GROCERY I (test : 20%)
 
 | Version | MAPE | Évaluation |
 |---|---|---|
-| v1 — Baseline (fenêtre 30j) | 62,4% | ❌ |
-| v2 — Avec données N-1 | 62,6% | ❌ |
-| v3 — Hybride (saisonnalité) | 59,2% | ❌ |
+| v1 - Baseline (fenêtre 30j) | 62,4% | ❌ |
+| v2 - Avec données N-1 | 62,6% | ❌ |
+| v3 - Hybride (saisonnalité) | 59,2% | ❌ |
 
 **→ Prophet est retenu pour le déploiement en production.**
 
@@ -148,9 +148,9 @@ Le **LSTM** (Long Short-Term Memory) est un type de réseau de neurones artifici
 ## 8. Limites et perspectives
 
 **Limites identifiées :**
-- Modèle entraîné sur une seule famille (GROCERY I) pour l'API — à étendre aux 5
-- Données historiques jusqu'en 2017 — modèle à réentraîner sur données récentes
-- LSTM sous-performant sur cette granularité — à explorer avec données par magasin
+- Modèle entraîné sur une seule famille (GROCERY I) pour l'API - à étendre aux 5
+- Données historiques jusqu'en 2017 - modèle à réentraîner sur données récentes
+- LSTM sous-performant sur cette granularité - à explorer avec données par magasin
 
 **Perspectives d'amélioration :**
 - Intégrer les 5 familles dans l'API avec endpoint par famille
